@@ -54,7 +54,7 @@
         </tr>
         @endforeach
     </table>
-    {{ $paginate->links() }}
+{{ $posts->links() }}
 @endsection
 
 

@@ -16,7 +16,7 @@ class MahasiswaController extends Controller
     //fungsi eloquent menampilkan data menggunakan pagination
     $mahasiswas = Mahasiswa::orderBy('nim', 'desc')->paginate(6);
     // Mengambil semua isi tabel
-    $paginate = Mahasiswa::orderBy('nim', 'desc')->paginate(6);
+    $posts = Mahasiswa::orderBy('nim', 'desc')->paginate(6);
     return view('mahasiswas.index', compact('posts'));
     // with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -25,8 +25,8 @@ class MahasiswaController extends Controller
 	{
 		// menangkap data pencarian
 		$cari = $request->search;
-        $paginate = Mahasiswa::where('nama', 'LIKE', '%'. $cari . '%')->paginate(6);
-        return view('mahasiswas.index', ['posts'=>$paginate]);
+        $posts = Mahasiswa::where('nama', 'LIKE', '%'. $cari . '%')->paginate(6);
+        return view('mahasiswas.index', ['posts'=>$posts]);
     }
     /**
      * Show the form for creating a new resource.
