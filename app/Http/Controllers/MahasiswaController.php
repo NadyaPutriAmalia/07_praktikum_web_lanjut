@@ -19,7 +19,7 @@ class MahasiswaController extends Controller
     // Mengambil semua isi tabel
     $posts = Mahasiswa::orderBy('nim', 'desc')->paginate(6);
     return view('mahasiswas.index', compact('posts'));
-    with('i', (request()->input('page', 1) - 1) * 5);
+    // with('i', (request()->input('page', 1) - 1) * 5); 
     }
     
     public function search(Request $request)
