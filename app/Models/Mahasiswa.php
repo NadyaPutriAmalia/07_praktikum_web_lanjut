@@ -29,5 +29,8 @@ class Mahasiswa extends Model //Definisi Model
         'email',
         'tgl_lahir'
     ];
-    // use HasFactory;
+    
+    public function kelas(){
+        return $this->belongsTo(Kelas::class);
+    }
 };
